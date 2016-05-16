@@ -1,0 +1,196 @@
+/*---------- CSS RESET ----------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/*---------- DESKTOP STYLING ----------*/
+
+html {
+	vertical-align: top;
+	font-size: 16px;
+	font-family: helvetica, 'sans-serif';
+	box-sizing: border-box;
+	background: black;
+}/*html*/
+
+/* General Text */
+
+p {
+	font-size: 2.3rem;
+
+}/*p*/
+
+/* -- Buttons -- */
+
+button {
+	cursor: pointer;
+
+}/*button*/
+
+.blue-button {
+	background: #0f6db3;
+	border: none;
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 100;
+
+}/*blue-button*/
+
+.blue-button:hover {
+	background: #0b5891;
+}/*blue-button hover*/
+
+.arrow {
+	border: none;
+	background: none;
+	color: black;
+	font-size: 3.5rem;
+	font-weight: 100;
+
+}/*arrow*/
+
+.collapse {
+	border: none;
+	background: none;
+	color: #0b5891;
+	font-size: 2rem;
+	z-index: 1000;
+	position: relative;
+
+}/*close*/
+
+/* -- General Classes -- */
+
+.hide {
+	display: none;
+}
+
+/* -- Ad Section -- */
+
+.ad {
+	background: white;
+	overflow: hidden;
+
+}/*ad*/
+
+/* -- Video Section -- */
+
+.video {
+	width: 61%;
+	height: 520px;
+	background: gray;
+	display: inline-block;
+	overflow: hidden;
+
+}/*video*/
+
+.bg-video {
+	min-width: 100%;
+	min-height: 520px;
+	top: 50%;
+	left: 50%;
+	position: relative;
+	-ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+
+}/*bg-video*/
+
+/* -- Side Panel Section -- */
+
+.side-panel {
+	display: inline-block;
+	width: 28%;
+	background: white;
+	vertical-align: top;
+	padding: 97px 5% 37px 5%;
+
+}/*side-panel*/
+
+.side-panel .blue-button {
+	margin: 120px 0 0;
+
+}/*side-panel blue-button*/
+
+.side-panel .collapse {
+	float: none;
+	display: block;
+	padding: 20px 0 0;
+}/*side-panel close*/
+
+.side-panel .pages {
+	margin: 95px 0 0;
+
+}/*side-panel pages*/
+
+.video .collapse {
+	float: right;
+	color: white;
+	opacity: 0.0;
+}/*video collapse*/
+
+.pages {
+	float: right;
+	vertical-align: top;
+
+}/*pages*/
+
+.pages .arrow, .pages p {
+	display: inline-block;
+
+}/*pages arrow, pages p*/
+
+.pages p {
+	font-size: 1.5rem;
+	margin: -10px 0 0;
+	vertical-align: text-top;
+
+}/*pages p*/

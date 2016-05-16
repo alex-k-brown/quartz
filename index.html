@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Quartz Test</title>
+
+<!--Stylesheets-->
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+<body>
+
+<!-- Ad -->
+
+<div class="ad">
+
+	<!--Video Section-->
+
+	<div class="video">
+		<button class="collapse" id="expand"><<</button>
+		<video autoplay loop class="bg-video">
+			<source src="video/slapping.mp4" type ='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'' />
+			<source src="video/slapping.webm" type='video/webm;codecs="vp8, vorbis"' />
+		</video>
+	</div><!--video-->
+
+	<!-- Side Panel -->
+
+	<div class="side-panel">
+		<p id="page-1" class="page-text">Lorem ipsum dolor sit amet, consectetur adipi scing elit, sed do eiusmo d tempor incididunt ut labore et dolore magna</p>
+		<p id="page-2" class="page-text hide">Curabitur nec gravida velit, id consequat ante. Phasellus varius gravida velit, ac congue purus ultricies quis. Quisque et turpis in.</p>
+		<p id="page-3" class="page-text hide">Sed quis scelerisque enim, quis consectetur sapien. Proin laoreet enim enim, vitae consequat lacus accumsan consequat. Donec ultrices massa sit.</p>
+		<button class="blue-button">Learn more</button>
+		<div class="pages">
+			<button class="arrow" id="page-left"><</button>
+			<p id="page-number">1/3</p>
+			<button class="arrow" id="page-right">></button>
+		</div>
+		<button class="collapse" id="collapse">>></button>
+	</div><!--side-panel-->
+</div><!--ad-->
+
+<!-- Add jQuery -->
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+
+<script>
+	//Shuffle through pages
+
+	// Counter Variable
+	var pageNumber = 1;
+
+	// setText Function - Change the text to match the page number
+
+	var setText = function(pageNum) {
+
+		//Add Hide Class to all page-text elements
+
+		$('.page-text').attr('class', 'page-text hide');
+
+		//Current Page ID Variable
+
+		var pageId = 'page-' + pageNum;
+
+		console.log(pageId);
+
+		//Remove Hide Class from Current Page Text Element
+
+		$('#' + pageId).attr('class', 'page-text');
+
+	};
+
+	//Perform When Document Loads
+
+	$(document).ready(function() {
+
+		//Change Page Numbers & Text on Right Arrow Click
+
+		$('#page-right').click(function() {
+			console.log('Page Right Click');
+
+			//Only if Less than 3
+
+			if (pageNumber < 3) {
+
+				//Update Page Number
+
+				pageNumber +=1;
+				console.log(pageNumber);
+				$('#page-number').html( pageNumber + '/3');
+			};
+			setText(pageNumber);
+		});
+
+		//Change Page Numbers & Text on Left Arrow Click
+
+		$('#page-left').click(function() {
+			console.log('Page Left Click');
+
+			//Only if Less than 3
+
+			if (pageNumber > 1) {
+
+				//Update Page Number
+
+				pageNumber -=1;
+				console.log(pageNumber);
+				$('#page-number').html( pageNumber + '/3');
+			};
+			setText(pageNumber);
+		});
+
+		//Collapse Side Bar
+
+		$('#collapse').click(function() {
+			console.log('Collapse Click')
+
+			//Show Expand Button
+
+			$('#expand').animate({opacity: '1.0'}, 2000);
+
+			//Hide Side Panel
+
+			$('.side-panel').css('display', 'none');
+
+			//Slide Side Panel Closed & Expand Video Over 1 Second
+
+			
+			$('.video').animate({width: '100%'}, 1000);
+		})
+
+		//Expand Side Bar
+
+		$('#expand').click(function() {
+			console.log('Expand Click')
+
+			//Show Expand Button
+
+			$('#expand').animate({opacity: '0.0'}, 2000);
+
+			//Hide Side Panel Content
+			
+
+			//Slide Side Panel Closed  & Expand Video Over 1 Second
+
+			$('.video').animate({width: '61%'}, 1000).queue(function (next) {
+				$('.side-panel').css('display', 'inline-block');
+			});
+		})
+
+	});
+
+</script>
+
+</body>
+</html>
