@@ -16,7 +16,7 @@
 
 	<!--Video Section-->
 
-	<div class="video">
+	<div id="video" class="video">
 		<button class="collapse" id="expand"><<</button>
 		<video autoplay loop class="bg-video">
 			<source src="video/slapping.mp4" type ='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'' />
@@ -126,7 +126,11 @@
 			//Slide Side Panel Closed & Expand Video Over 1 Second
 
 			
-			$('.video').animate({width: '100%'}, 1000);
+			$('#video').animate({width: '100%'}, 1000);
+			
+
+			
+			
 		})
 
 		//Expand Side Bar
@@ -136,16 +140,21 @@
 
 			//Show Expand Button
 
-			$('#expand').animate({opacity: '0.0'}, 2000);
+			$('#expand').animate({opacity: '0.0'}, 2000)
 
-			//Hide Side Panel Content
 			
 
-			//Slide Side Panel Closed  & Expand Video Over 1 Second
+			//Slide Side Panel Open & Expand Video Over 1 Second
 
-			$('.video').animate({width: '61%'}, 1000).queue(function (next) {
+			$('#video').animate({width: '61%'}, 1000);
+
+			//Display Side Panel After 1 Second
+
+			setTimeout(function () {
 				$('.side-panel').css('display', 'inline-block');
-			});
+			}, 1000);
+
+			
 		})
 
 	});
