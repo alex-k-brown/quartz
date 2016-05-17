@@ -87,7 +87,7 @@
 
 			//Fade In Expand Button
 
-			$('#expand').animate({opacity: '1.0'}, 1500);
+			$('#expand').animate({opacity: '1.0'}, 1000);
 
 
 			//Hide Side Panel
@@ -108,19 +108,17 @@
 
 		$('#expand').click(function() {
 
-			//Move Expand Button on Video Collapse
 
-			$('#expand').animate({left: '55%'}, 1000);
+			//Hide Expand Button
 
-			//Fade out Expand Button
+			$('#expand').css('display', 'none');
 
-			$('#expand').animate({opacity: '0.0'}, 1500);
+			//MOve Expand Back to Original Position;
 
-			//Hide Expand Button After Fade
+			$('#expand').css('left', '55%');
 
-			setTimeout(function () {
-				$('#expand').css('display', 'none');
-			}, 2000);
+			$('#expand').css('opacity', '0.0');
+			
 
 			//Slide Side Panel Open & Collapse Video Over 1 Second
 
