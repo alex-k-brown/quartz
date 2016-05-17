@@ -21,6 +21,7 @@
 		<video autoplay loop class="bg-video">
 			<source src="video/slapping.mp4" type ='video/mp4;codecs="avc1.42E01E, mp4a.40.2"'' />
 			<source src="video/slapping.webm" type='video/webm;codecs="vp8, vorbis"' />
+
 		</video>
 	</div><!--video-->
 
@@ -44,122 +45,7 @@
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
 
-<script>
-	//Shuffle through pages
-
-	// Counter Variable
-	var pageNumber = 1;
-
-	// setText Function - Change the text to match the page number
-
-	var setText = function(pageNum) {
-
-		//Add Hide Class to all page-text elements
-
-		$('.page-text').attr('class', 'page-text hide');
-
-		//Current Page ID Variable
-
-		var pageId = 'page-' + pageNum;
-
-		console.log(pageId);
-
-		//Remove Hide Class from Current Page Text Element
-
-		$('#' + pageId).attr('class', 'page-text');
-
-	};
-
-	//Perform When Document Loads
-
-	$(document).ready(function() {
-
-		//Change Page Numbers & Text on Right Arrow Click
-
-		$('#page-right').click(function() {
-			console.log('Page Right Click');
-
-			//Only if Less than 3
-
-			if (pageNumber < 3) {
-
-				//Update Page Number
-
-				pageNumber +=1;
-				console.log(pageNumber);
-				$('#page-number').html( pageNumber + '/3');
-			};
-			setText(pageNumber);
-		});
-
-		//Change Page Numbers & Text on Left Arrow Click
-
-		$('#page-left').click(function() {
-			console.log('Page Left Click');
-
-			//Only if Less than 3
-
-			if (pageNumber > 1) {
-
-				//Update Page Number
-
-				pageNumber -=1;
-				console.log(pageNumber);
-				$('#page-number').html( pageNumber + '/3');
-			};
-			setText(pageNumber);
-		});
-
-		//Collapse Side Bar
-
-		$('#collapse').click(function() {
-			console.log('Collapse Click')
-
-			//Show Expand Button
-
-			$('#expand').animate({opacity: '1.0'}, 2000);
-
-			//Hide Side Panel
-
-			$('.side-panel').css('display', 'none');
-
-			//Slide Side Panel Closed & Expand Video Over 1 Second
-
-			
-			$('#video').animate({width: '100%'}, 1000);
-			
-
-			
-			
-		})
-
-		//Expand Side Bar
-
-		$('#expand').click(function() {
-			console.log('Expand Click')
-
-			//Show Expand Button
-
-			$('#expand').animate({opacity: '0.0'}, 2000)
-
-			
-
-			//Slide Side Panel Open & Expand Video Over 1 Second
-
-			$('#video').animate({width: '61%'}, 1000);
-
-			//Display Side Panel After 1 Second
-
-			setTimeout(function () {
-				$('.side-panel').css('display', 'inline-block');
-			}, 1000);
-
-			
-		})
-
-	});
-
-</script>
+<script src="js/action.js"></script>
 
 </body>
 </html>

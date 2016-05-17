@@ -54,7 +54,7 @@ table {
 
 html {
 	vertical-align: top;
-	font-size: 16px;
+	font-size: 18px;
 	font-family: helvetica, 'sans-serif';
 	box-sizing: border-box;
 	background: black;
@@ -63,7 +63,7 @@ html {
 /* General Text */
 
 p {
-	font-size: 2.3rem;
+	font-size: 2rem;
 
 }/*p*/
 
@@ -80,6 +80,7 @@ button {
 	color: white;
 	font-size: 1.5rem;
 	font-weight: 100;
+	padding: 5px 15px;
 
 }/*blue-button*/
 
@@ -102,7 +103,6 @@ button {
 	color: #0b5891;
 	font-size: 2rem;
 	z-index: 1000;
-	position: relative;
 
 }/*close*/
 
@@ -128,12 +128,15 @@ button {
 	background: gray;
 	display: inline-block;
 	overflow: hidden;
+	vertical-align: top;
+	top: 0;
+
 
 }/*video*/
 
 .bg-video {
-	min-width: 100%;
-	min-height: 520px;
+	min-width: 120%;
+	min-height: 120%;
 	top: 50%;
 	left: 50%;
 	position: relative;
@@ -144,6 +147,18 @@ button {
 
 }/*bg-video*/
 
+.video .collapse {
+	float: right;
+	color: white;
+	display: none;
+	opacity: 0.0;
+	left: 55%;
+	z-index: 1000;
+	position: absolute;
+
+
+}/*video collapse*/
+
 /* -- Side Panel Section -- */
 
 .side-panel {
@@ -151,31 +166,30 @@ button {
 	width: 28%;
 	background: white;
 	vertical-align: top;
-	padding: 97px 5% 37px 5%;
+	padding: 75px 5% 37px 5%;
 
 }/*side-panel*/
 
 .side-panel .blue-button {
-	margin: 120px 0 0;
+	top: 400px;
+	position: absolute;
 
 }/*side-panel blue-button*/
 
 .side-panel .collapse {
 	float: none;
 	display: block;
-	padding: 20px 0 0;
+	position: absolute;
+	top: 0px;
+	left: 61%;
 }/*side-panel close*/
 
 .side-panel .pages {
-	margin: 95px 0 0;
+	top: 376px;
+	left: 85%;
+	position: absolute;
 
 }/*side-panel pages*/
-
-.video .collapse {
-	float: right;
-	color: white;
-	opacity: 0.0;
-}/*video collapse*/
 
 .pages {
 	float: right;
@@ -194,3 +208,110 @@ button {
 	vertical-align: text-top;
 
 }/*pages p*/
+
+/*---------- 2000PX STYLING ----------*/
+
+@media(min-width: 2000px) {
+	html {
+		font-size: 22px;
+
+	}/*html*/
+
+	.pages p {
+		font-size: 2rem;
+		vertical-align: text-bottom;
+
+	}/*pages p*/
+
+}/*2000px*/
+
+/*---------- 3000PX STYLING ---------*/
+
+@media(min-width: 3000px) {
+	html {
+		font-size: 28px;
+
+	}/*html*/
+}/*3000px*/
+
+/*---------- 1200PX STYLING ---------*/
+
+@media(max-width: 1300px) {
+	html {
+		font-size: 16px;
+
+	}/*html*/
+}/*1200px*/
+
+/*---------- 1000PX STYLING (TABLET)----------*/
+
+@media(max-width: 1000px) {
+	html {
+		font-size: 28px;
+
+	}/*html*/
+
+	.video {
+		height: 430px;
+		background: url('../img/slapping.png');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 100%;
+		
+	}/*video*/
+
+	.bg-video {
+		min-height: 430px;
+		display: none;
+
+	}/*bg-video*/
+
+	.side-panel {
+		width: 90%;
+		padding: 100px 5%;
+
+	}/*side-panel*/
+
+	.side-panel .blue-button {
+		top: 600px;
+		left: 68.5%;
+
+	}/*side-panel blue-button*/
+
+	.side-panel .pages {
+		top: 670px;
+		left: 69.5%;
+
+	}/*side-panel pages*/
+
+	.page-text {
+		width: 60%;
+	}/*page-text*/
+
+	.arrow {
+		padding: 0;
+
+	}/*arrow*/
+
+	.pages p {
+		font-size: 2rem;
+		vertical-align: text-bottom;
+	}/*pages p*/
+
+	.side-panel .collapse {
+		display: none;
+	}/*side-panel collapse*/
+
+	.side-panel-
+}/*1000px*/
+
+/*---------- 767PX STYLING ---------*/
+
+@media(max-width: 767px) {
+	.video {
+		height: 430px;
+		
+	}/*video*/
+
+}/*767px*/
